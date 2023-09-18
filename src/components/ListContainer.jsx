@@ -25,14 +25,7 @@ const ListContainer = ({itemsList, setItemsList}) => {
     }
   return (
     <>
-    <View style={styles.cointainer}>
-        <FlatList
-        style={styles.flastlist}
-        data={itemsList}
-        renderItem={renderList}
-        keyExtractor={item => item.id}>
-        </FlatList>
-    </View>
+    
     <Modal modalVisible={modalVisible}
             deleteItem={deleteItem}
             setModalVisible={setModalVisible}></Modal>
@@ -43,15 +36,6 @@ const ListContainer = ({itemsList, setItemsList}) => {
 export default ListContainer
 
 const styles = StyleSheet.create({
-    cointainer:{
-        width:"98%",
-        justifyContent:"center",
-        alignItems:"center",
-    },
-    flastlist:{
-        width:"100%",
-        marginTop:10
-    },
     touchable:{
         width:"85%",
         padding:15,
