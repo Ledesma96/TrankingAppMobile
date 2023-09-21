@@ -8,7 +8,9 @@ const List = ({data}) => {
         <Pressable style={styles.pressable}>
             <Card style={styles.card}>
                 <View style={styles.container}>
+                    <View style={styles.radius}>
                     <Image style={styles.image} source={{uri: item.image}}></Image>
+                    </View>
                     <View style={styles.containerView}>
                         <View style={styles.container_view}>
                             <Text style={styles.text}>{item.name_driver}</Text>

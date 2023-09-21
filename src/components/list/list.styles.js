@@ -3,7 +3,6 @@ import colors from "../../constants/colors";
 
 const styles = StyleSheet.create({
     container:{
-        flex:1,
         width:"100%",
         justifyContent:"flex-start",
         alignItems:"flex-start",
@@ -17,28 +16,28 @@ const styles = StyleSheet.create({
     },
     flastlist:{
         width:"100%",
+        height:"100%",
         marginBottom:100,
-        overflow:"hidden",
-        marginTop:70
     },
     pressable:{
-        height:200, 
-        flex:1,
-        marginTop: 1,
         justifyContent: "center",
         alignItems:"center"
     },
     card:{ 
         paddingLeft:20,
         margin:"auto",
-        marginTop:8,
         height:80,
         borderColor: colors.secondary
     },
     image:{
         width:65,
+        height:65
+    },
+    radius:{
+        width:65,
         height:65,
-        borderRadius:"50%"
+        borderRadius:32,
+        overflow:"hidden"
     },
     text:{
         fontSize:20,

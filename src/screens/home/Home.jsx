@@ -3,10 +3,10 @@ import InfoHome from './infoHome/InfoHome'
 import { View } from 'react-native'
 import styles from './home.styles'
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
-        <InfoHome></InfoHome>
+        <InfoHome navigation={navigation}></InfoHome>
     </View>
   )
 }

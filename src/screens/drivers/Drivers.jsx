@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import drivers from "../../../data/logistics.drivers"
-import { List, InputSearch } from '../../../components/index'
+import drivers from "../../data/logistics.drivers"
+import { List, InputSearch } from '../../components/index'
 import { View } from 'react-native'
 import styles from './divers.styles'
 

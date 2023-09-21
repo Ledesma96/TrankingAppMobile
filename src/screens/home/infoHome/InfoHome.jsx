@@ -1,11 +1,11 @@
-import { Text, View } from 'react-native'
+import { Pressable, Text, View } from 'react-native'
 import React from 'react'
-import { Card } from '../../../../components/index.js';
+import { Card } from '../../../components/index.js';
 import { Ionicons, FontAwesome5 } from '@expo/vector-icons';
 import styles from './infoHome.styles.js';
-import logisticsDrivers from '../../../../data/logistics.drivers.js';
+import logisticsDrivers from '../../../data/logistics.drivers.js';
 
-const InfoHome = () => {
+const InfoHome = ({navigation}) => {
     const driverServices = logisticsDrivers.filter(driver => driver.services === true);
   return (
     <View style={styles.container}>
@@ -23,6 +23,7 @@ const InfoHome = () => {
             <Text>Conduciendo</Text>
         </View>
     </Card>
+    <Pressable style={styles.card} onPress={() => navigation.navigate("Drivers")}>
     <Card style={styles.card}>
         <View style={styles.cardContainer}>
             <FontAwesome5 style={styles.icons}  name="user" size={40} color="black" />
@@ -37,6 +38,7 @@ const InfoHome = () => {
             <Text>Conduciendo</Text>
         </View>
     </Card>
+    </Pressable>
     </View>
     
   )
