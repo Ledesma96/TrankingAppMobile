@@ -3,8 +3,8 @@ import colors from "../../constants/colors";
 
 const styles = StyleSheet.create({
     inputContainer: {
+        width:"90%",
         marginTop:10,
-        marginLeft:20,
         borderRadius: 10,
         alignItems: 'center',
         flexDirection: 'row',
@@ -15,12 +15,13 @@ const styles = StyleSheet.create({
         backgroundColor:"rgba(255, 255, 255, 0.8)"
       },
     input: {
-        width: 230,
+        width: "100%",
         height: 50,
         marginRight:15,
         fontSize: 17,
         paddingLeft: 12,
         marginLeft:10,
+        borderRadius: 10,
         borderBottomWidth:1,
         borderColor:colors.primary,
       }

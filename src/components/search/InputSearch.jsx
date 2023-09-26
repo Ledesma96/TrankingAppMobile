@@ -18,7 +18,6 @@ const InputSearch = ({setItemsList}) => {
         placeholder='Search...'
         value={inputText}
         onChangeText={onHandleChangeItem}></TextInput>
-        <Button title='Agregar' color={"#FF4500"} ></Button>
     </View>
     </>
   )

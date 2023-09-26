@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
     flastlist:{
         width:"100%",
         height:"100%",
-        marginBottom:100,
     },
     pressable:{
         justifyContent: "center",
