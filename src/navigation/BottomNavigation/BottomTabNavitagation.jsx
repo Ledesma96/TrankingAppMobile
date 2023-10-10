@@ -4,9 +4,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import styles from "./Botton.styles.js"
 import colors from "../../constants/colors.js";
 const BottomTab = createBottomTabNavigator()
+import { FontAwesome5 } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import { Entypo, AntDesign, Feather,MaterialCommunityIcons } from '@expo/vector-icons';
 
 function BottomTabNavigator() {
+  const navigation = useNavigation();
   return (
     <BottomTab.Navigator 
     initialRouteName="Home"
@@ -14,6 +17,17 @@ function BottomTabNavigator() {
       tabBarActiveTintColor: colors.quinary,
       tabBarInactiveTintColor: colors.quaternary,
       tabBarStyle: styles.container,
+      headerRight: () => (
+        <FontAwesome5
+          name="user"
+          size={24}
+          color="black"
+          style={{ marginRight: 16 }} 
+          onPress={() => {
+            console.log(navigation.navigate("Profile"))
+          }}          
+        />
+      ),
     }}
     >
       <BottomTab.Screen name="Home" component={HomeNavigator} 
@@ -31,5 +45,7 @@ function BottomTabNavigator() {
     </BottomTab.Navigator>
   );
 }
+
+
 
 export default BottomTabNavigator;

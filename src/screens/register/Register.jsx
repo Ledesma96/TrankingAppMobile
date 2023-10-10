@@ -9,8 +9,6 @@ const Register = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [lastName, setLastName] = useState("");
-  const [dni, setDni] = useState("");
-  const [company, setCompany] = useState("");
   const [emptyField, setEmptyField] = useState(false);
 
   const onHandleChangeItem = (field, text) => {
@@ -21,14 +19,8 @@ const Register = ({ navigation }) => {
       case "lastName":
         setLastName(text.trim());
         break;
-      case "company":
-        setCompany(text.trim());
-        break;
       case "confirmPassword":
         setConfirmPassword(text.trim());
-        break;
-      case "dni":
-        setDni(text.trim());
         break;
       case "password":
         setPassword(text.trim());
@@ -63,14 +55,12 @@ const Register = ({ navigation }) => {
       email: email,
       password: password,
       lastName: lastName,
-      dni: dni,
-      company: company,
     };
     const id = users.length > 0 ? users.length + 1 : 1;
     newUser.id = id;
     users.push(newUser);
     console.log(newUser);
-    //navigation.navigate("Login");
+    navigation.navigate("Login");
   };
 
   return (
@@ -89,20 +79,6 @@ const Register = ({ navigation }) => {
           placeholder="Apellido"
           value={lastName}
           onChangeText={(text) => onHandleChangeItem("lastName", text)}
-          placeholderTextColor="rgba(31, 6, 143, 0.8)"
-        ></TextInput>
-        <TextInput
-          style={styles.input}
-          placeholder="DNI"
-          value={dni}
-          onChangeText={(text) => onHandleChangeItem("dni", text)}
-          placeholderTextColor="rgba(31, 6, 143, 0.8)"
-        ></TextInput>
-        <TextInput
-          style={styles.input}
-          placeholder="Compañía"
-          value={company}
-          onChangeText={(text) => onHandleChangeItem("company", text)}
           placeholderTextColor="rgba(31, 6, 143, 0.8)"
         ></TextInput>
         <TextInput

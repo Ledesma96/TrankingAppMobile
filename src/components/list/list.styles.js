@@ -4,29 +4,32 @@ import colors from "../../constants/colors";
 const styles = StyleSheet.create({
     container:{
         width:"100%",
-        justifyContent:"flex-start",
-        alignItems:"flex-start",
+        justifyContent:"space-between",
+        alignItems:"center",
         flexDirection:"row",
     },
     containerView:{
-        marginLeft:15
+        width: "65%",
+        marginTop:-15,
     },
     container_view:{
         flexDirection:"row"
     },
     flastlist:{
+        marginTop:16,
         width:"100%",
         height:"100%",
     },
-    pressable:{
+    pressable:{marginTop:3,
         justifyContent: "center",
         alignItems:"center"
     },
-    card:{ 
+    card:{
         paddingLeft:20,
-        margin:"auto",
-        height:80,
-        borderColor: colors.secondary
+        margin:0,
+        height:90,
+        borderBottomWidth:1,
+        borderColor:colors.primary
     },
     image:{
         width:65,
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
     },
     cityText:{
         marginLeft:5,
-        color: colors.terciary
+        color: colors.primary
     }
 })
 

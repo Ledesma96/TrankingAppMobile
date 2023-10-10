@@ -6,7 +6,8 @@ export default[{
   DNI_driver: 35212547,
   brithday_driver: 28102541,
   city:"Buenos Aires",
-  services: true
+  services: true,
+  location: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR15Bq5OZHXfINl34Ldh_C1z-JzEh8KxEZANg&usqp=CAU"
 },
 {
   id:2,
@@ -16,7 +17,8 @@ export default[{
   DNI_driver: 1274576,
   brithday_driver: 27021996,
   city: "Bahia Blanca",
-  services: true
+  services: true,
+  location: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR15Bq5OZHXfINl34Ldh_C1z-JzEh8KxEZANg&usqp=CAU"
 },
 {
   id:3,
@@ -26,7 +28,8 @@ export default[{
   DNI_driver: 12254125,
   brithday_driver: 27021998,
   city: "Misiones",
-  services: false
+  services: false,
+  location: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR15Bq5OZHXfINl34Ldh_C1z-JzEh8KxEZANg&usqp=CAU"
 },
 {
   id:4,
@@ -36,7 +39,8 @@ export default[{
   DNI_driver: 20125124,
   brithday_driver: 20031995,
   city: "Cordoba",
-  services: true
+  services: true,
+  location: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR15Bq5OZHXfINl34Ldh_C1z-JzEh8KxEZANg&usqp=CAU"
 },
 {
   id:5,
@@ -46,7 +50,8 @@ export default[{
   DNI_driver: 28124152,
   brithday_driver: 12041998,
   city: "Buenos Aires",
-  services: false
+  services: false,
+  location: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR15Bq5OZHXfINl34Ldh_C1z-JzEh8KxEZANg&usqp=CAU"
 },
 {
   id:6,
@@ -56,7 +61,8 @@ export default[{
   DNI_driver: 14251345,
   brithday_driver: 15081996,
   city: "cordoba",
-   services: true
+   services: true,
+   location: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR15Bq5OZHXfINl34Ldh_C1z-JzEh8KxEZANg&usqp=CAU"
 },
 {
   id:7,
@@ -66,5 +72,6 @@ export default[{
   DNI_driver: 23258741,
   brithday_driver: 27021996,
   city: "La Pampa",
-  services: false
+  services: false,
+  location: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR15Bq5OZHXfINl34Ldh_C1z-JzEh8KxEZANg&usqp=CAU"
 }]

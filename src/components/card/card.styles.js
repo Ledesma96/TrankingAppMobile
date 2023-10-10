@@ -2,13 +2,12 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     card:{
-      backgroundColor:"#dcdcdc",
+      backgroundColor:"#f2f2f2",
       flexDirection:"row",
       width:"90%",
       justifyContent: "space-evenly",
       alignItems:"center",
       borderRadius:10,
-      marginTop:20
     }
 })
 

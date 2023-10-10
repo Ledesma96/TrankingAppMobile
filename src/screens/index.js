@@ -2,5 +2,7 @@ import Home from "./home/Home";
 import Drivers from "./drivers/Drivers";
 import Login from "./login/Login";
 import Register from "./register/Register";
+import DetailDrivers from "./detailDrivers/DetailDrivers";
+import Profile from "./profile/Profile";
 
-export {Drivers, Home, Login, Register}
+export {Drivers, Home, Login, Register, DetailDrivers, Profile}

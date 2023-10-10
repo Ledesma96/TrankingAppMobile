@@ -1,11 +1,12 @@
 import { FlatList, Image, Pressable,Text, View} from 'react-native'
+import { MaterialIcons } from '@expo/vector-icons';
 import React from 'react'
 import styles from './list.styles.js'
 import Card from "../card/Card.jsx"
 
-const List = ({data}) => {
+const List = ({data, navigation}) => {
     const renderItem  = ({item}) => (
-        <Pressable style={styles.pressable}>
+        <Pressable style={styles.pressable} onPress={() => navigation.navigate("DetailDriver", {id: item.id})}>
             <Card style={styles.card}>
                 <View style={styles.container}>
                     <View style={styles.radius}>
@@ -18,6 +19,7 @@ const List = ({data}) => {
                         </View>
                         <Text style={styles.cityText}>{item.city}</Text>
                     </View>
+                <MaterialIcons name="keyboard-arrow-right" size={32} color="black" />
                 </View>
             </Card>
         </Pressable>

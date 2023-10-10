@@ -23,7 +23,7 @@ const InfoHome = ({navigation}) => {
             <Text>Conduciendo</Text>
         </View>
     </Card>
-    <Pressable style={styles.card} onPress={() => navigation.navigate("Drivers")}>
+    <Pressable style={styles.card} onPress={() => navigation.navigate("Driveers")}>
     <Card style={styles.card}>
         <View style={styles.cardContainer}>
             <FontAwesome5 style={styles.icons}  name="user" size={40} color="black" />

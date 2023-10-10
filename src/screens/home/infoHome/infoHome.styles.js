@@ -7,7 +7,9 @@ const styles = StyleSheet.create({
         alignItems:"center"
     },
     card:{
-        height:200
+        height:200,
+        backgroundColor:"#dcdcdc",
+        borderRadius:10,
     },
     cardContainer:{
         justifyContent:"center",
