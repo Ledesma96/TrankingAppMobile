@@ -7,6 +7,7 @@ const BottomTab = createBottomTabNavigator()
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { Entypo, AntDesign, Feather,MaterialCommunityIcons } from '@expo/vector-icons';
+import { Profile } from "../../screens/index.js";
 
 function BottomTabNavigator() {
   const navigation = useNavigation();
@@ -42,6 +43,12 @@ function BottomTabNavigator() {
           <MaterialCommunityIcons style={styles.icons} name="steering" size={30} />
         )
       }}/>
+      <BottomTab.Screen name="Profile" component={Profile}
+      options={{
+        tabBarIcon: () => (
+          <FontAwesome5 style={styles.icons} name="user" size={30}/>
+        )
+      }} />
     </BottomTab.Navigator>
   );
 }

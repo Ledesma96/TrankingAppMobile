@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    session: false,
     user: null,
+    token: null,
+    localId: null,
+    imageCamera: null,
 }
 
 
@@ -11,16 +13,27 @@ export const userSlice = createSlice ({
     initialState,
     reducers: {
         login: (state, action) => {
-            state.session = true;
-            state.user = action.payload;
+            console.log(action.payload.localId);
+            return{
+                token: action.payload.idToken,
+                user: action.payload.email,
+                localId: action.payload.localId,
+            }
+           
         },
         logout: (state, action) => {
-            state.session = false;
+            state.token = null;
             state.user = null;
+        },
+        setCameraImage: (state, action) => {
+            return {
+                ...state,
+                imageCamera: action.payload
+            }
         }
     }
 })
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout, setCameraImage } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -1,7 +1,8 @@
 import { View, Text, TextInput, Pressable } from "react-native";
 import React, { useState } from "react";
 import styles from "./register.styles";
-import {users} from "../../data/users.js";
+import axios from "axios";
+import { API_KEY, AUTH_URL } from "../../firebase";
 
 const Register = ({ navigation }) => {
   const [name, setName] = useState("");
@@ -39,9 +40,7 @@ const Register = ({ navigation }) => {
       email === "" ||
       password === "" ||
       confirmPassword === "" ||
-      lastName === "" ||
-      dni === "" ||
-      company === ""
+      lastName === "" 
     ) {
       setEmptyField(true);
       return;
@@ -56,11 +55,14 @@ const Register = ({ navigation }) => {
       password: password,
       lastName: lastName,
     };
-    const id = users.length > 0 ? users.length + 1 : 1;
-    newUser.id = id;
-    users.push(newUser);
     console.log(newUser);
-    navigation.navigate("Login");
+    axios.post(`${AUTH_URL}accounts:signUp?key=${API_KEY}`, newUser)
+    .then((response) => {
+      navigation.navigate("Login");
+    })
+    .catch ((error) => {
+      console.log(error);
+    })
   };
 
   return (

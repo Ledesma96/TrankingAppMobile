@@ -5,10 +5,10 @@ import BottomTabNavigator from './BottomNavigation/BottomTabNavitagation'
 import LoginNavigator from './loginNavigation/LoginNavigation'
 
 const IndexNavigation = () => {
-  const session = useSelector(state => state.user.session)
+  const  token = useSelector(state => state.user.token)
   return (
     <NavigationContainer>
-        {session ? <BottomTabNavigator/> : <LoginNavigator/>}
+        {token ? <BottomTabNavigator/> : <LoginNavigator/>}
     </NavigationContainer>
   )
 }

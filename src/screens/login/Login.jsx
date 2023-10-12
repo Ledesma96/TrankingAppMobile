@@ -1,9 +1,10 @@
 import { View, TextInput, Pressable, Text } from "react-native";
 import React, {useState} from "react";
 import styles from "./login.styles";
+import axios from "axios";
 import { useDispatch } from "react-redux";
-import { users } from "../../data/users"
 import { login } from "../../features/user/userSlice";
+import { API_KEY, AUTH_URL } from "../../firebase";
 
 const Login = ({ navigation }) => {
   const dispatch = useDispatch()
@@ -23,12 +24,22 @@ const Login = ({ navigation }) => {
     }
   }
 
-  const logIn = () => {
-    const user = users.find(user => user.email === email && user.password === password)
-    if(user){
-      dispatch(login(user))
-    } else {
-      console.log("Email o contraseña equivocado")
+  const logIn = async() => {
+    try {
+      const loginData = {
+        email: email,
+        password: password
+      }
+      
+      const response = await axios.post(`${AUTH_URL}accounts:signInWithPassword?key=${API_KEY}`, loginData)
+      if(response){
+        const userData = await response.data;
+        dispatch(login(userData))
+      } else {
+        console.log("Email o contraseña equivocado")
+      }
+    } catch (error) {
+      console.log(error.message);
     }
   }
   return (

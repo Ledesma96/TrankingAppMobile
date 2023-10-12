@@ -8,10 +8,7 @@ const styles = StyleSheet.create({
       height: 55,
     },
     icons:{
-      color: colors.secondary,
-    },
-    navigation:{
-      color: "red"
+      color: colors.quaternary,
     }
 })
 
