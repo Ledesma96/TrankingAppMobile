@@ -13,7 +13,7 @@ export const userSlice = createSlice ({
     initialState,
     reducers: {
         login: (state, action) => {
-            console.log(action.payload.localId);
+            console.log('este es', action);
             return{
                 token: action.payload.idToken,
                 user: action.payload.email,

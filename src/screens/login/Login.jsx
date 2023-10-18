@@ -5,6 +5,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/user/userSlice";
 import { API_KEY, AUTH_URL } from "../../firebase";
+import { insertSession } from "../../db/index.js";
 
 const Login = ({ navigation }) => {
   const dispatch = useDispatch()
@@ -30,18 +31,26 @@ const Login = ({ navigation }) => {
         email: email,
         password: password
       }
-      
-      const response = await axios.post(`${AUTH_URL}accounts:signInWithPassword?key=${API_KEY}`, loginData)
-      if(response){
+  
+      const response = await axios.post(`${AUTH_URL}accounts:signInWithPassword?key=${API_KEY}`, loginData);
+      if (response) {
         const userData = await response.data;
-        dispatch(login(userData))
+        dispatch(login(userData));
+        insertSession({
+          localId: userData.localId,
+          email: userData.email,
+          token: userData.idToken
+        })
+        .then(result => console.log(result))
+        .catch(error => console.log(error.message));
       } else {
-        console.log("Email o contraseña equivocado")
+        console.log("Email o contraseña equivocado");
       }
     } catch (error) {
       console.log(error.message);
     }
   }
+  
   return (
     <View style={styles.container}>
       <View style={styles.containerInputs}>

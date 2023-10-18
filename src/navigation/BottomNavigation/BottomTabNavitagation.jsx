@@ -25,7 +25,7 @@ function BottomTabNavigator() {
           color="black"
           style={{ marginRight: 16 }} 
           onPress={() => {
-            console.log(navigation.navigate("Profile"))
+            navigation.navigate('Profile')
           }}          
         />
       ),
@@ -47,7 +47,7 @@ function BottomTabNavigator() {
       options={{
         tabBarIcon: () => (
           <FontAwesome5 style={styles.icons} name="user" size={30}/>
-        )
+        ),
       }} />
     </BottomTab.Navigator>
   );

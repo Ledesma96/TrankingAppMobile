@@ -12,6 +12,7 @@ import axios from "axios";
 
 const Profile = () => {
   const image = useSelector(state => state.user.imageCamera)
+  const email = useSelector(state => state.user.user)
   const [newImage, setNewImage] = useState(true)
   const localId = useSelector(state => state.user.localId);
   const [company, setCompany] = useState("company");
@@ -87,7 +88,7 @@ const Profile = () => {
       <View style={styles.containerInfo}>
         <View style={styles.containerInfoView}>
           <Text style={styles.title}>Email:</Text>
-          <Text style={styles.info}>Gabriel.m.ledesma96@gmail.com</Text>
+          <Text style={styles.info}>{email}</Text>
         </View>
         <View style={styles.containerInfoView}>
           <Text style={styles.title}>Compañía:</Text>

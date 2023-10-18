@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { List, InputSearch } from '../../components/index';
-import { View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import styles from './divers.styles';
 
 const Conductores = ({ navigation }) => {
@@ -33,7 +33,11 @@ const Conductores = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <InputSearch setItemsList={handleSearch} />
+      <Text style={styles.title}>Conductores</Text>
       <List data={data} navigation={navigation} />
+      <Pressable style={styles.btn}>
+        <Text style={styles.text}>Agregar conductor</Text>
+      </Pressable>
     </View>
   );
 };
