@@ -16,8 +16,8 @@ const IndexNavigation = () => {
     (async () => {
       try {
         const session = await fetchSession()
-        console.log('Esta es la sesion', session)
         if (session.rows.length) {
+          console.log(session.rows);
           const usuario = session.rows._array[0]
           dispatch(login(usuario))
         }
@@ -26,7 +26,7 @@ const IndexNavigation = () => {
       }
     })()
   }, [])
-
+  console.log(user);
   return (
     <NavigationContainer>
         {user ? <BottomTabNavigator/> : <LoginNavigator/>}

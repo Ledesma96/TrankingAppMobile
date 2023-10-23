@@ -45,3 +45,18 @@ export const fetchSession = () => {
   })
   return promise
 }
+
+
+export const logout = () => {
+  const promise = new Promise((resolve, reject) => {
+    db.transaction(tx => {
+      tx.executeSql(
+        'DELETE FROM sessions',
+        [],
+        (_, result) => resolve(result),
+        (_, error) => reject(error)
+      )
+    })
+  })
+  return promise;
+}

@@ -1,4 +1,4 @@
-import { View, Text, Image, Pressable, TextInput, Button } from "react-native";
+import { View, Text, Image, Pressable, TextInput } from "react-native";
 import styles from "./profile.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
@@ -9,6 +9,8 @@ import * as ImagePicker from "expo-image-picker"
 import { useDispatch, useSelector } from "react-redux";
 import { setCameraImage } from "../../features/user/userSlice";
 import axios from "axios";
+import { logout } from "../../db";
+import { logoutt } from "../../features/user/userSlice";
 
 const Profile = () => {
   const image = useSelector(state => state.user.imageCamera)
@@ -71,6 +73,23 @@ const Profile = () => {
     setCgangeCompany(true)
   }
 
+  const logOut = () => {
+    logout()
+      .then(() => {
+        dispatch(logoutt())
+        .then(()=> {
+          console.log('exitoso');
+          console.log('sesion cerrada');
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.circle}>
@@ -108,9 +127,9 @@ const Profile = () => {
             </>
           )}
         </View>
-        <View style={styles.containerInfoView}>
-          <Text></Text>
-        </View>
+        <Pressable style={styles.containerInfoView} onPress={() => logOut()}>
+          <Text>Cerrar sesion</Text>
+        </Pressable>
         <View style={styles.containerInfoView}>
           <Text></Text>
         </View>

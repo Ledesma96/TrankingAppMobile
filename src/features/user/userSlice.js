@@ -13,15 +13,15 @@ export const userSlice = createSlice ({
     initialState,
     reducers: {
         login: (state, action) => {
-            console.log('este es', action);
+            console.log('este es', action.payload.data);
             return{
-                token: action.payload.idToken,
-                user: action.payload.email,
-                localId: action.payload.localId,
+                token: action.payload.data.access_token,
+                user: action.payload.data.email,
+                localId: action.payload.data.localId,
             }
            
         },
-        logout: (state, action) => {
+        logoutt: (state, action) => {
             state.token = null;
             state.user = null;
         },
@@ -34,6 +34,6 @@ export const userSlice = createSlice ({
     }
 })
 
-export const { login, logout, setCameraImage } = userSlice.actions;
+export const { login, logoutt, setCameraImage } = userSlice.actions;
 
 export default userSlice.reducer;

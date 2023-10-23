@@ -4,7 +4,6 @@ import styles from "./login.styles";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/user/userSlice";
-import { API_KEY, AUTH_URL } from "../../firebase";
 import { insertSession } from "../../db/index.js";
 
 const Login = ({ navigation }) => {
@@ -32,14 +31,14 @@ const Login = ({ navigation }) => {
         password: password
       }
   
-      const response = await axios.post(`${AUTH_URL}accounts:signInWithPassword?key=${API_KEY}`, loginData);
+      const response = await axios.post(`http://192.168.1.45:8080/api/adminuser/login`, loginData);
       if (response) {
         const userData = await response.data;
         dispatch(login(userData));
         insertSession({
           localId: userData.localId,
           email: userData.email,
-          token: userData.idToken
+          token: userData.access_token
         })
         .then(result => console.log(result))
         .catch(error => console.log(error.message));
