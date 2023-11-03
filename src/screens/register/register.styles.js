@@ -18,7 +18,18 @@ const styles = StyleSheet.create({
         borderBottomWidth:1,
         borderColor: colors.secondary,
         paddingLeft: 10,
+        marginTop: 16
+    },
+    passwordVisible:{
+        width: "75%",
         marginTop: 10,
+        justifyContent: 'flex-center',
+        alignItems: 'flex-end'
+    },
+    textVisible:{
+        paddingLeft: 10,
+        fontWeight: 'bold',
+        fontSize: 14
     },
     pessableRegister:{
         marginTop: 20,

@@ -13,13 +13,24 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems: 'center'
     },
+    viewPassword:{
+        width: "100%",
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     input:{
         width: "75%",
         height: 50,
         borderBottomWidth:1,
         borderColor: colors.secondary,
         paddingLeft: 10,
+        marginTop: 16,
+    },
+    eyeIcon:{
+        marginLeft: -24,
         marginTop: 10,
+        color: colors.secondary,
     },
     placecholderLogin:{
         marginTop: 20,
@@ -40,14 +51,16 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     textRegister:{
+        fontWeight: 'bold',
         fontSize: 18,
-        marginLeft: 10,
+        textAlign: 'center',
         marginRight: 10
     },
     textRegisterRegister:{
         color: colors.quaternary,
+        fontWeight: 'bold',
         fontSize: 18,
-        marginLeft: 10
+        textAlign: 'center'
     }
 })
 

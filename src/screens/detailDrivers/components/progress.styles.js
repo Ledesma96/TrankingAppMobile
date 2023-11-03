@@ -2,6 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     containerGrafic: {
+        width: '100%',
         marginTop: 10,
         flex: 1,
         justifyContent: "center",
@@ -33,10 +34,17 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     viewPackageContentIcon:{
-        paddingRight: 10
+        paddingHorizontal: 10
     },
     viewPackageContentText:{
-        paddingLeft: 10
+        paddingLeft: 10,
+        marginTop: -5,
+        fontWeight: '600'
+    },
+    viewPackageContentTextP:{
+        paddingLeft: 15,
+        marginTop: -5,
+        fontWeight: '600'
     }
   });
   

@@ -53,7 +53,7 @@ const Progress = () => {
         </View>
         <View style={styles.viewPackageContent}>
             <Octicons style={styles.viewPackageContentIcon} name="package" size={30} color="yellow" />
-            <Text style={styles.viewPackageContentText}>Pendientes: 60</Text>
+            <Text style={styles.viewPackageContentTextP}>Pendientes: 60</Text>
         </View>
       </View>
     </View>

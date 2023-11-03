@@ -2,12 +2,14 @@ import { View, TextInput, Pressable, Text } from "react-native";
 import React, {useState} from "react";
 import styles from "./login.styles";
 import axios from "axios";
+import { Entypo } from '@expo/vector-icons';
 import { useDispatch } from "react-redux";
 import { login } from "../../features/user/userSlice";
 import { insertSession } from "../../db/index.js";
 
 const Login = ({ navigation }) => {
   const dispatch = useDispatch()
+  const [visible, setVisible] = useState(true)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -60,13 +62,21 @@ const Login = ({ navigation }) => {
           onChangeText={(text) => onHandleChangeItem("email", text)}
           placeholderTextColor="rgba(31, 6, 143, 0.8)"
         ></TextInput>
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          value={password}
-          onChangeText={(text) => onHandleChangeItem("password", text)}
-          placeholderTextColor="rgba(31, 6, 143, 0.8)"
-        ></TextInput>
+        <View style={styles.viewPassword}>
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            secureTextEntry={visible}
+            value={password}
+            onChangeText={(text) => onHandleChangeItem("password", text)}
+            placeholderTextColor="rgba(31, 6, 143, 0.8)"
+          ></TextInput>
+          <Pressable onPress={() => setVisible(!visible)}>
+            
+            <Entypo style={styles.eyeIcon} name={visible ? "eye-with-line" : "eye" } size={24} color="black" />
+          </Pressable>
+        </View>
+        
       </View>
       <Pressable style={styles.placecholderLogin} onPress={() => logIn()}>
         <Text style={styles.textLogin}>Login</Text>

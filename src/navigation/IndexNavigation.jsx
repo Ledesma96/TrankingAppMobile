@@ -9,7 +9,7 @@ import { login } from '../features/user/userSlice'
 
 const IndexNavigation = () => {
   const dispatch = useDispatch();
-  const { user, localId } = useSelector(state => state.user);
+  const { user } = useSelector(state => state.user);
 
 
   useEffect(() => {

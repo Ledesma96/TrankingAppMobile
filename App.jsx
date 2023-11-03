@@ -1,6 +1,7 @@
 import { useFonts } from "expo-font";
 import fonts from "./src/global/fonts.js";
 import { Provider } from "react-redux";
+import { RefreshDataProvider } from "./src/context/RefreshdataContext.jsx";
 import { store } from "./src/store";
 import IndexNavigation from "./src/navigation/IndexNavigation.jsx";
 import { init } from "./src/db/index.js";
@@ -16,8 +17,10 @@ export default function App() {
   }
 
   return (
-    <Provider store={store}>
-      <IndexNavigation/>
-    </Provider>
+    <RefreshDataProvider>
+      <Provider store={store}>
+        <IndexNavigation/>
+      </Provider>
+    </RefreshDataProvider>
   );
 }

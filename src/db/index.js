@@ -22,7 +22,7 @@ export const insertSession = ({ localId, email, token }) => {
   const promise = new Promise((resolve, reject) => {
     db.transaction(tx => {
       tx.executeSql(
-        'INSERT OR REPLACE INTO sessions (localId, email, token) VALUES (?, ?, ?);',
+        'INSERT INTO sessions (localId, email, token) VALUES (?, ?, ?);',
         [localId, email, token],
         (_, result) => resolve(result),
         (_, error) => reject(error)

@@ -59,6 +59,34 @@ const styles = StyleSheet.create({
     prueba:{
         flex: 1,
         backgroundColor: "red"
+    },
+    relevant:{
+        width: '100%',
+        justifyContent: 'center',
+        alignContent: 'center',
+    },
+    nameAndId:{
+        textAlign: 'center'
+    },
+    containerLogOut:{
+        flexDirection:'row',
+        justifyContent: 'center',
+        alignContent: 'center',
+        width: '100%',
+        height: 40,
+        marginTop:25
+    },
+    pessableLogOut:{
+        width: '30%',
+    },
+    textLogOut:{
+        textAlign: 'center',
+        width: '100%',
+        borderWidth:1,
+        borderRadius:5,
+        borderColor: colors.secondary,
+        padding:10,
+        fontWeight: 'bold'
     }
 })
 

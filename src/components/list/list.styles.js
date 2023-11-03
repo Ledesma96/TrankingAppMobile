@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         justifyContent:"space-between",
         alignItems:"center",
         flexDirection:"row",
+        position: 'relative'
     },
     containerView:{
         width: "65%",
@@ -20,7 +21,8 @@ const styles = StyleSheet.create({
         width:"100%",
         height:"100%",
     },
-    pressable:{marginTop:3,
+    pressable:{
+        marginTop:3,
         justifyContent: "center",
         alignItems:"center"
     },
@@ -51,6 +53,24 @@ const styles = StyleSheet.create({
     cityText:{
         marginLeft:5,
         color: colors.primary
+    },
+    circleOn:{
+        flex: 1,
+        position:"absolute",
+        width: 18,
+        height: 18,
+        borderRadius:9,
+        backgroundColor:'green',
+        bottom:0
+    },
+    circleOff:{
+        flex: 1,
+        position:"absolute",
+        width: 18,
+        height: 18,
+        borderRadius:9,
+        backgroundColor:'red',
+        bottom:0
     }
 })
 
