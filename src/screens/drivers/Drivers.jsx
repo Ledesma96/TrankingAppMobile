@@ -18,7 +18,7 @@ const Conductores = ({ navigation }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://192.168.1.45:8080/api/adminuser/${localId}`);
+        const response = await axios.get(`https://hermespq-production.up.railway.app/api/adminuser/${localId}`);
         const driversData = await response.data.data.drivers;
         driversData.sort((a, b) => {
           if (a.dId.service === true && b.dId.service === false) {

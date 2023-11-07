@@ -56,7 +56,7 @@ const Register = ({ navigation }) => {
       last_name_owner: lastName,
     };
     try {
-      const response = await axios.post(`http://192.168.1.45:8080/api/adminuser/register`, newUser);
+      const response = await axios.post(`https://hermespq-production.up.railway.app/api/adminuser/register`, newUser);
       if (response.status == 201){
         navigation.navigate(`Login`)
       } else {

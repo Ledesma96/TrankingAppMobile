@@ -33,9 +33,10 @@ const Login = ({ navigation }) => {
         password: password
       }
   
-      const response = await axios.post(`http://192.168.1.45:8080/api/adminuser/login`, loginData);
+      const response = await axios.post(`https://hermespq-production.up.railway.app/api/adminuser/login`, loginData);
       if (response) {
         const userData = await response.data;
+        console.log(userData);
         dispatch(login(userData));
         insertSession({
           localId: userData.localId,

@@ -18,7 +18,7 @@ const Modal = ({ add, setAdd, data }) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [dni, setDni] = useState("");
-
+  console.log(localId);
   const handleData = async () => {
     const newDriver = {
       name_driver: firstName,
@@ -30,10 +30,10 @@ const Modal = ({ add, setAdd, data }) => {
       city: "-----"
     };
     try {
-      const response =  await axios.post(`http://192.168.1.45:8080/api/adminuser/${localId}`,
+      const response =  await axios.post(`https://hermespq-production.up.railway.app/api/adminuser/${localId}`,
         newDriver
       );
-      
+      console.log(response.status);
       if (response.status === 201) {
         console.log("Datos enviados correctamente:", response.data.message);
         setAdd(false);

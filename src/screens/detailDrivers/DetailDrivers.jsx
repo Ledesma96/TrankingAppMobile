@@ -17,7 +17,7 @@ const DetailDrivers = ({ route}) => {
 
   const deleteDriver = async() => {
     try {
-      const result = await axios.delete(`http://192.168.1.45:8080/api/adminuser/${localId}/delete/${driver._id}`)
+      const result = await axios.delete(`https://hermespq-production.up.railway.app/api/adminuser/${localId}/delete/${driver._id}`)
       if(result.data.success){
         navigation.navigate('Driveers')
         setRefresh(refresh + 1)
