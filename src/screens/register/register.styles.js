@@ -65,6 +65,23 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
         textAlign: 'center'
+    },
+    containerImg: {
+        width: "100%",
+        height: "20%",
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    imagen: {
+        width:'65%',
+        height:'100%',
+        height: 150,
+        resizeMode: 'contain',
+    },
+    marca:{
+        fontSize: 22,
+        fontFamily: 'Monserrat',
+        marginTop: '-5%'
     }
 })
 

@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
     card:{
       backgroundColor:"#f2f2f2",
       flexDirection:"row",
-      width:"90%",
+      width:"80%",
       justifyContent: "space-evenly",
       alignItems:"center",
       borderRadius:10,

@@ -37,10 +37,19 @@ function BottomTabNavigator() {
           <AntDesign style={styles.icons} name="home" size={30}  />
         )
       }}/>
+      {/* <BottomTab.Screen name="Profile" component={Maps}
+      options={{
+        tabBarIcon: () => (
+          <Entypo style={styles.icons} name="map" size={30} color="black" />
+        )
+      }}></BottomTab.Screen> */}
       <BottomTab.Screen name="Drivers" component={DriversNavigator} 
       options={{
         tabBarIcon: () => (
           <MaterialCommunityIcons style={styles.icons} name="steering" size={30} />
+        ),
+        headerLeft : () => (
+          <AntDesign name="arrowleft" size={30} color="black" style={styles.back} onPress={() => navigation.goBack()}  />
         )
       }}/>
       <BottomTab.Screen name="Profile" component={Profile}
@@ -48,6 +57,10 @@ function BottomTabNavigator() {
         tabBarIcon: () => (
           <FontAwesome5 style={styles.icons} name="user" size={30}/>
         ),
+        headerLeft : () => (
+          <AntDesign name="arrowleft" size={30} color="black" style={styles.back} onPress={() => navigation.goBack()}  />
+        ),
+        
       }} />
     </BottomTab.Navigator>
   );

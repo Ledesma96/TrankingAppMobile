@@ -18,7 +18,6 @@ const Modal = ({ add, setAdd, data }) => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [dni, setDni] = useState("");
-  console.log(localId);
   const handleData = async () => {
     const newDriver = {
       name_driver: firstName,
@@ -53,10 +52,30 @@ const Modal = ({ add, setAdd, data }) => {
       <BlurView intensity={1} style={styles.blurContainer}>
         <View style={styles.modalContent}>
           <View style={styles.modalForm}>
-            <TextInput style={styles.inputs} placeholder="Nombre" onChangeText={(text) => setFirstName(text)}></TextInput>
-            <TextInput style={styles.inputs} placeholder="Apellido" onChangeText={(text) => setLastName(text)}></TextInput>
-            <TextInput style={styles.inputs} placeholder="Email" onChangeText={(text) => setEmail(text)}></TextInput>
-            <TextInput style={styles.inputs} placeholder="Dni" onChangeText={(text) => setDni(text)}></TextInput>
+            <View style={styles.contentInput}>
+              <View style={styles.contentBackground}>
+                <Text style={styles.label}>Nombres</Text>
+              </View>
+              <TextInput style={styles.inputs} placeholder="Ingrese nombres" onChangeText={(text) => setFirstName(text)}></TextInput>
+            </View>
+            <View style={styles.contentInput}>
+              <View style={styles.contentBackground}>
+                <Text style={styles.label}>Apellido</Text>
+              </View>
+              <TextInput style={styles.inputs} placeholder="Ingrese Apellido" onChangeText={(text) => setLastName(text)}></TextInput>
+            </View>
+            <View style={styles.contentInput}>
+              <View style={styles.contentBackground}>
+                <Text style={styles.label}>Email</Text>
+              </View>
+              <TextInput style={styles.inputs} placeholder="Ingrese email" onChangeText={(text) => setEmail(text)}></TextInput>
+            </View>
+            <View style={styles.contentInput}>
+              <View style={styles.contentBackground}>
+                <Text style={styles.label}>Dni</Text>
+              </View>
+              <TextInput style={styles.inputs} placeholder="Ingrese dni" onChangeText={(text) => setDni(text)}></TextInput>
+            </View>
           </View>
           <View style={styles.modalContainerButton}>
             <TouchableOpacity style={styles.modalButtonConfirm}>

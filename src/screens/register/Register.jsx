@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Pressable } from "react-native";
+import { View, Text, TextInput, Pressable, Image } from "react-native";
 import React, { useState } from "react";
 import styles from "./register.styles";
 import axios from "axios";
@@ -71,6 +71,10 @@ const Register = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.containerImg}>
+        <Image source={require('././../../assest/images/HermesPQ.png') } style={styles.imagen}></Image>
+        <Text style={styles.marca}>Hermes PQ</Text>
+      </View>
       <View style={styles.containerInputs}>
         <TextInput
           style={styles.input}

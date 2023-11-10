@@ -6,6 +6,7 @@ import { Entypo } from '@expo/vector-icons';
 import { useDispatch } from "react-redux";
 import { login } from "../../features/user/userSlice";
 import { insertSession } from "../../db/index.js";
+import { Image } from "react-native";
 
 const Login = ({ navigation }) => {
   const dispatch = useDispatch()
@@ -55,6 +56,10 @@ const Login = ({ navigation }) => {
   
   return (
     <View style={styles.container}>
+      <View style={styles.containerImg}>
+        <Image source={require('././../../assest/images/HermesPQ.png') } style={styles.imagen}></Image>
+        <Text style={styles.marca}>Hermes PQ</Text>
+      </View>
       <View style={styles.containerInputs}>
         <TextInput
           style={styles.input}

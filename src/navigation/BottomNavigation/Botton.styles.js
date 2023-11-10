@@ -9,6 +9,12 @@ const styles = StyleSheet.create({
     },
     icons:{
       color: colors.quaternary,
+    },
+    back:{
+      marginLeft: 16
+    },
+    disabled:{
+      display: 'none'
     }
 })
 

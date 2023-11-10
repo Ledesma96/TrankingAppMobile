@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     containerInputs:{
         width: "100%",
@@ -61,7 +61,26 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
         textAlign: 'center'
-    }
+    },
+    containerImg: {
+        marginTop: '-20%',
+        marginBottom: '10%',
+        width: "100%",
+        height: "20%",
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      imagen: {
+        width:'65%',
+        height:'100%',
+        height: 150,
+        resizeMode: 'contain',
+      },
+      marca:{
+        fontSize: 22,
+        fontFamily: 'Monserrat',
+        marginTop: '-5%',
+      }
 })
 
 export default styles;
