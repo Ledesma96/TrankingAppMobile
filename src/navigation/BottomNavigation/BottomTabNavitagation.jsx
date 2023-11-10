@@ -7,7 +7,7 @@ const BottomTab = createBottomTabNavigator()
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { Entypo, AntDesign, Feather,MaterialCommunityIcons } from '@expo/vector-icons';
-import { Profile } from "../../screens/index.js";
+import { Profile, Map } from "../../screens/index.js";
 
 function BottomTabNavigator() {
   const navigation = useNavigation();
@@ -37,12 +37,12 @@ function BottomTabNavigator() {
           <AntDesign style={styles.icons} name="home" size={30}  />
         )
       }}/>
-      {/* <BottomTab.Screen name="Profile" component={Maps}
+      <BottomTab.Screen name="Map" component={Map}
       options={{
         tabBarIcon: () => (
           <Entypo style={styles.icons} name="map" size={30} color="black" />
         )
-      }}></BottomTab.Screen> */}
+      }}></BottomTab.Screen>
       <BottomTab.Screen name="Drivers" component={DriversNavigator} 
       options={{
         tabBarIcon: () => (

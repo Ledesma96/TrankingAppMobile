@@ -26,7 +26,6 @@ const IndexNavigation = () => {
       }
     })()
   }, [])
-  console.log(user);
   return (
     <NavigationContainer>
         {user ? <BottomTabNavigator/> : <LoginNavigator/>}

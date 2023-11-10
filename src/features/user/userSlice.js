@@ -16,7 +16,6 @@ export const userSlice = createSlice ({
     initialState,
     reducers: {
         login: (state, action) => {
-            console.log('este es', action.payload.data);
             return{
                 token: action.payload.data.access_token,
                 user: action.payload.data.email,
@@ -39,7 +38,7 @@ export const userSlice = createSlice ({
         setCameraImage: (state, action) => {
              return {
                  ...state,
-                 imageCamera: action.payload
+                 imageProfile : action.payload
              }
         }
     }

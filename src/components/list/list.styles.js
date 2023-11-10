@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
         alignItems:"center"
     },
     card:{
+        width: '90%',
         paddingLeft:20,
         margin:0,
         height:90,
