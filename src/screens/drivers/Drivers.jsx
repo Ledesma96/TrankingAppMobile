@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { List, InputSearch, Modal } from '../../components/index';
+import { List, InputSearch, Modal, ModalAlert } from '../../components/index';
 import { Pressable, Text, View } from 'react-native';
 import styles from './divers.styles';
 import { useSelector } from 'react-redux';
 import { useContext } from 'react';
 import { RefreshContext } from '../../context/RefreshdataContext';
+import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 
 const Conductores = ({ navigation }) => {
+  const [succesMessage, setSuccesMessage] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null)
   const [refresh] = useContext(RefreshContext)
   const {localId} = useSelector(state => state.user)
   const [add, setAdd] = useState(false)
@@ -58,8 +61,18 @@ const Conductores = ({ navigation }) => {
       </Pressable>
       {add && <Modal setAdd={setAdd}
                      add={add}
-                     data={data}>
+                     data={data}
+                     setSuccesMessage={setSuccesMessage}
+                     setErrorMessage={setErrorMessage}>
               </Modal>}
+      {succesMessage && <ModalAlert>
+                          <AntDesign name="checkcircleo" size={15} color="green" />
+                          <Text style={styles.messageModal}>{succesMessage}</Text>
+                        </ModalAlert>}
+      {errorMessage && <ModalAlert>
+                          <MaterialIcons name="error-outline" size={15} color="red" />
+                          <Text style={styles.messageModal}>{errorMessage}</Text>
+                        </ModalAlert>}
     </View>
   );
 };

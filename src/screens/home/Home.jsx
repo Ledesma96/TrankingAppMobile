@@ -1,16 +1,17 @@
 import React from 'react'
 import { View } from 'react-native'
 import styles from './home.styles'
+import * as Animatable from 'react-native-animatable';
 import { InfoHome, Tasks } from './components/index.js'
 
 
 
 const Home = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <Animatable.View animation="zoomIn" duration={800} style={styles.container}>
         <InfoHome navigation={navigation}></InfoHome>
         <Tasks></Tasks>
-    </View>
+    </Animatable.View>
   )
 }
 export default Home

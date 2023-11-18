@@ -12,7 +12,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
-const Modal = ({ add, setAdd, data }) => {
+const Modal = ({ add, setAdd, data, setSuccesMessage, setErrorMessage }) => {
   const {localId} = useSelector(state => state.user)
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -34,16 +34,22 @@ const Modal = ({ add, setAdd, data }) => {
       );
       console.log(response.status);
       if (response.status === 201) {
-        console.log("Datos enviados correctamente:", response.data.message);
         setAdd(false);
+        setSuccesMessage(response.data.message);
+        setTimeout(() => {
+          setSuccesMessage(null)
+        }, 3000)
       } else {
-        console.log(
-          "Error al enviar datos. Estado de respuesta:",
-          response.data.status
-        );
+        setErrorMessage(response.data.status)
+        setTimeout(() => {
+          setErrorMessage(null)
+        }, 3000)
       }
     } catch (error) {
-      console.log(error.message);
+      setErrorMessage(error.message)
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 3000)
     }
   };
 

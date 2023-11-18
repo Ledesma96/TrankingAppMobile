@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 18,
         fontWeight:"bold",
+    },
+    messageModal:{
+        fontSize: 12,
+        marginLeft: 5
     }
 })
 
